@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories - Arova</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .content h2 {
+      color: #7b2ff7;
+      margin-bottom: 20px;
+    }
+
+    .content ul {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .content ul li {
+      margin-bottom: 15px;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  <h1 class="site-title">Arova</h1>
+  <p class="site-tagline">Share. Heal. Grow. Together.</p>
+</header>
+
+
+  <!-- Main Content -->
+  <main>
+    <section class="content">
+      <h2>Feedback from Our Community</h2>
+      <p>Here are some shared experiences from teenagers in our camp (anonymized and approved):</p>
+      <ul>
+        <li>“I finally felt heard for the first time. It’s amazing to know I'm not alone.”</li>
+        <li>“Everyone is so supportive. I can share without fear.”</li>
+        <li>“This community is like a family who understands mental health struggles.”</li>
+      </ul>
+      <p>Want to share yours? Join the WhatsApp Community and tell us your story ❤️</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="index.html">Home</a>
+       <a href="vision-arova.html">Vision</a>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="our-team.html">Our Team</a>
+      <a href="faq.html">FAQ</a>
+      <a href="how-i-can-participate.html">How I Can Participate</a>
+      <a href="stories.html">Feedback</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+    <p>&copy; 2025 Arova. All rights reserved.</p>
+  </footer>
+
+  <!-- Theme Script -->
+  <script>
+    const elements = [
+      document.body,
+      document.querySelector('header'),
+      ...document.querySelectorAll('.hero, .content, .card, button, .join-link, footer')
+    ];
+    if (localStorage.getItem('dimMode') === 'true') {
+      elements.forEach(el => el.classList.add('dim-mode'));
+    }
+  // Check if we're on index.html (or root)
+  const path = window.location.pathname;
+  const isHome = path.endsWith("index.html") || path === "/" || path === "";
+
+  if (!isHome) {
+    // Hide profile section on non-home pages
+    const profile = document.getElementById("sidebarProfile");
+    if (profile) profile.style.display = "none";
+  }
+</script>
+</body>
+</html>
+

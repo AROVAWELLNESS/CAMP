@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vision - Arova</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .content h2 {
+      color: #7b2ff7;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+  <h1 class="site-title">Arova</h1>
+  <p class="site-tagline">Share. Heal. Grow. Together.</p>
+</header>
+
+
+  <!-- Main Content -->
+  <main>
+    <section class="content">
+      <h2>Vision Of Us</h2>
+      <p>Arova envisions a world where young minds feel safe, heard, and supported.
+We aim to create spaces that nurture emotional strength and self-awareness.
+Through shared stories, connection, and guided reflection, we inspire healing.
+Arova empowers teens to grow through community, empathy, and open dialogue.
+We believe that every voice matters—and that sharing is the first step to change.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="vision-arova.html">Vision</a>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="our-team.html">Our Team</a>
+      <a href="faq.html">FAQ</a>
+      <a href="how-i-can-participate.html">How I Can Participate</a>
+      <a href="stories.html">Feedback</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+    <p>&copy; 2025 Arova. All rights reserved.</p>
+  </footer>
+
+  <!-- Theme Script -->
+  <script>
+    const elements = [
+      document.body,
+      document.querySelector('header'),
+      ...document.querySelectorAll('.hero, .content, .card, button, .join-link, footer')
+    ];
+    if (localStorage.getItem('dimMode') === 'true') {
+      elements.forEach(el => el.classList.add('dim-mode'));
+    }
+  // Check if we're on index.html (or root)
+  const path = window.location.pathname;
+  const isHome = path.endsWith("index.html") || path === "/" || path === "";
+
+  if (!isHome) {
+    // Hide profile section on non-home pages
+    const profile = document.getElementById("sidebarProfile");
+    if (profile) profile.style.display = "none";
+  }
+</script>
+</body>
+</html>
